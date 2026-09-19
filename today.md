@@ -33,12 +33,15 @@
 
 ## 四、Git 首次提交（今天唯一"过期作废"的事）
 
-- [ ] `git config --global user.name "你的 GitHub 用户名"`
-- [ ] `git config --global user.email "你的 GitHub 邮箱"`
-- [ ] `git init`（在 `D:\RoboMaster-51`）
-- [ ] `git add .`
-- [ ] `git commit -m "启动段 D2：Dev-C++ 跑通前三个练习"`
+**详细步骤见 `docs\Git操作步骤.md`**。当前状态：`git init` 与 `git add .` 已完成（21 个文件已暂存），只差下面两步。
+
+- [x] `git config --global user.name`（已完成）
+- [ ] `git config --global user.email "你的 GitHub 邮箱"` ← **卡在这里**
+- [x] `git init`（已在 `D:\code` 完成）
+- [x] `git add .`（已暂存 21 个文件，无垃圾混入）
+- [ ] `git commit -m "启动段 D2：C 语言前三个练习 + 原理速查笔记"`
 - [ ] `git log --oneline` 验证日期是今天
+- [ ] GitHub 建私有仓库 → `remote add` → `branch -M main` → `push -u origin main`
 
 ## 今日通过判据 —— 已达成 ✓
 

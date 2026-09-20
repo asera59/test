@@ -41,3 +41,13 @@ Release/
 Thumbs.db
 desktop.ini
 ~$*
+
+# ---- 只保留 2026 目录：以下仅存本地、不入仓库 ----
+/docs/
+/today.md
+/hello.c
+/hello world.c
+
+# 注意：.gitignore 本身必须留在仓库里。
+# 2026 目录内部同样含 .vs\ 缓存与 x64\ 编译产物（合计 30MB+），
+# 靠上面的 .vs/ 与 x64/ 规则挡住，缺了它就会把缓存提交上去。

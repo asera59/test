@@ -28,6 +28,24 @@ Release/
 *.vcxproj.filters
 *.vcxproj.user
 
+# ---- Keil μVision 工程文件（与 VS 同理：只上传 .c 源码）----
+# 工程文件（Keil 自己生成，别人克隆后重建即可）
+*.uvproj
+*.uvprojx
+*.uvopt
+*.uvoptx
+*.uvgui.*
+# 编译产物
+Objects/
+Listings/
+*.hex
+*.plg
+*.lst
+*.m51
+*.lnp
+*.sct
+*.__i
+
 # ---- 编辑器配置（只对你本机有意义）----
 .vscode/
 

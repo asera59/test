@@ -38,15 +38,18 @@ int main()
 //printf("char 占%d个字节\n", sizeof(char));
 //printf("int 占%d个字节\n", sizeof(int));
 //printf("double 占 %d个字节\n", sizeof(double));
-int i = 0;
-while (1)
-{
-	i=i+1;
-	printf("i=%d\n", i);
-//	if (i >= 5)break;
-	if(i >= 5) continue;
-	printf("  （这一圈还没结束）\n"); 
-}
-	printf("循环结束了， i= %d\n",i);
+//int i = 0;
+//while (1)
+//{
+//	i=i+1;
+//	printf("i=%d\n", i);
+////	if (i >= 5)break;
+//	if(i >= 5) continue;
+//	printf("  （这一圈还没结束）\n"); 
+//}
+//	printf("循环结束了， i= %d\n",i);
+	char c = 255;
+	int i = 255;
+	printf("c=%d, i=%d\n", c, i); 
 	return 0; 
 }

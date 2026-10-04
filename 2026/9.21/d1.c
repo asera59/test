@@ -13,6 +13,9 @@ P2=0x15;
 
 while(1){
 P2=(P2&0x1F)|LED;
+P2=(P2&0x1F)|BUZZER;
+P2=(P2&0x1F)|SEG_SEL;
+P2=(P2&0x1F)|SEG_DAT;
 //	P2=LED;
 i=i+1;
 }

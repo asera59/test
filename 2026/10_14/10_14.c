@@ -42,7 +42,8 @@
 //	return *s1 - *s2;
 //}
 
-char* mycpy(char* dst, const char* src)
+//char* mycpy(char* dst, const char* src)
+char* mycpy(char* dst, const char* src, size_t n)
 {
 	//int idx = 0;
 	//while (src[idx]) {
@@ -51,12 +52,13 @@ char* mycpy(char* dst, const char* src)
 	//}
 	//dst[idx] = '\0';
 	char* ret = dst;
-	while (*src != '\0') {
-		*dst = *src;
-		dst++;
-		src++;
+	while (/**src != '\0'*/*dst++=*src++) {
+		//*dst = *src;
+		//dst++;
+		//src++;
+
 	}
-	*dst = '\0';
+	//*dst = '\0';
 
 	return ret;
 }
@@ -76,7 +78,7 @@ int main(int argc, char const* argv[])
 	//printf("mylen=%lu\n", mylen(line));
 	//printf("sizeof=%lu\n", sizeof(line));
 	char s1[] = "abc ";
-	char s2[] = "abc ";//gcc-32 msvc-1
+	char s2[] = "abc";//gcc-32 msvc-1
 	//char s2[] = "bbc";
 	//char s2[] = "Abc";//gcc32 msvc1
 	//printf("%d\n", strcmp(s1, s2));

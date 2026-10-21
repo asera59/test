@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-
-struct date {
-	int month;
-	int day;
-	int year;
-};
-
-int main(int argc,char const*argv[]) {
+//
+//struct date {
+//	int month;
+//	int day;
+//	int year;
+//};
+//
+//int main(int argc,char const*argv[]) {
 	//	const int size = 3;
 	//	int board[size][size];
 	//	int i, j;
@@ -143,13 +143,28 @@ int main(int argc,char const*argv[]) {
 //today.month = 07;
 //today.day = 31;
 //today.year = 2014;
-struct date today = { 07,31,2014 };
-struct date thismonth = { .month = 7,.year = 2014 };
+//struct date today = { 07,31,2014 };
+//struct date thismonth = { .month = 7,.year = 2014 };
+//
+//printf("Today's date is %i-%i-%i.\n",
+//	today.year, today.month, today.day);
+//printf("This month is %i-%i-%i.\n",
+//	thismonth .year, thismonth.month, thismonth.day);
+//
+//return 0;
+//}
+void swap(int*a,int*b)
+{
+	int* c = *a;
+	*a = *b;
+	*b = *c;
+	printf("%d %d", *a, *b);
+}
 
-printf("Today's date is %i-%i-%i.\n",
-	today.year, today.month, today.day);
-printf("This month is %i-%i-%i.\n",
-	thismonth .year, thismonth.month, thismonth.day);
-
-return 0;
+int main()
+{
+	int a, b;
+	printf("输入两个数：");
+	scanf("%d %d", &a, &b);
+	swap(&a, &b);
 }

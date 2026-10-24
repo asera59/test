@@ -172,7 +172,7 @@ int main()
 //}
 //printf("\n");
 
-//
+//第八题 自己写 对了
 int a, n, i, s,j;
 i = 0, s = 0, j = 0;
 scanf("%d %d", &a, &n);

@@ -125,24 +125,73 @@
 //	return 0;
 //}
 
-void reverseStr(char* s) {
-	char* p = s;
-	char* q = s + strlen(s) - 1;
-	char t;
-	while (p < q) {
-		t = *p;
-		*p = *q;
-		*q = t;
-		p++;
-		q--;
-	}
-}
+//void reverseStr(char* s) {
+//	char* p = s;
+//	char* q = s + strlen(s) - 1;
+//	char t;
+//	while (p < q) {
+//		t = *p;
+//		*p = *q;
+//		*q = t;
+//		p++;
+//		q--;
+//	}
+//}
+
+//int main() {
+//	char s[105];
+//	scanf("%s", s);
+//	reverseStr(s);
+//	printf("%s\n", s);
+//
+//	return 0;
+//}
+
+//for (i = 0;s[i] != '\0';i++)
+//if (s[i] >= 'A' && s[i] <= 'Z')
+//char* q = s + strlen(s) - 1;
+//
+//for (i = 0;s[i] != '\0', i++)
+//if (s[i] >= 'A' && s[i] <= 'Z')
+//char* q = s + strlen(s) - 1;
+//
+//for (i = 0;s[i] != '\0';i++)
+//if (s[i] >= 'A' && s[i] <= 'Z')
+//char* q = s + strlen(s) - 1;
+
+//for (i = 0;s[i] != '\0';i++)
+//if (s[i] >= 'A' && s[i] <= 'Z')
+//char* q = s + strlen(s) - 1;
+
+//int main(void) {
+//	char s[105];
+//	int a = 0, b = 0, c = 0, d = 0, i;
+//	scanf("%s", s);
+//	for (i = 0;s[i] != '\0';i++) {
+//		if (s[i] >= 'A' && s[i] <= 'Z')a++;
+//		else if (s[i] >= 'a' && s[i] <= 'z')b++;
+//		else if (s[i] >= '0' && s[i] <= '9')c++;
+//		else d++;
+//	}
+//	printf("%d %d %d %d", a, b, c, d);
+//}
 
 int main() {
-	char s[105];
-	scanf("%s", s);
-	reverseStr(s);
-	printf("%s\n", s);
-
+	int m, n, i, j;
+	int a[12][12];
+	scanf("%d %d", &m, &n);
+	for (i = 0;i < m;i++) {
+		for (j = 0;j < n;j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	for (j = 0;j < n;j++) {
+		for (i = 0;i < m;i++) {
+			if (i)printf(" ");
+			printf("%d", a[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
+
 }

@@ -268,25 +268,72 @@
 //	else printf("YES");
 //}
 
-void minAndIndex(int* a, int n, int* minVal, int* minIdx) {
-	*minVal = *a;
-	*minIdx = 0;
-	int j;
-	for (j = 1;j < n;j++) {
-		if (a[j] < *minVal) {
-			*minIdx = j;
-			*minVal = a[j];
-		}
-	}
-}
+//void minAndIndex(int* a, int n, int* minVal, int* minIdx) {
+//	*minVal = *a;
+//	*minIdx = 0;
+//	int j;
+//	for (j = 1;j < n;j++) {
+//		if (a[j] < *minVal) {
+//			*minIdx = j;
+//			*minVal = a[j];
+//		}
+//	}
+//}
+
+//int main() {
+//	int s[105] = { 0 };
+//	int i, n, minval, minidx;
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++) {
+//		scanf("%d", &s[i]);
+//	}
+//	minAndIndex(s, n, &minval, &minidx);
+//	printf("%d %d", minval, minidx);
+//}
 
 int main() {
-	int s[105] = { 0 };
-	int i, n, minval, minidx;
+	int n, sum = 0;
 	scanf("%d", &n);
-	for (i = 0;i < n;i++) {
-		scanf("%d", &s[i]);
+	while (sum != n) {
+		if (n / 512 > 0) {
+			n -= 512;
+			sum += 1000000000;
+		}
+		else if (n / 256 > 0) {
+			n -= 256;
+			sum += 100000000;
+		}
+		else if (n / 128 > 0) {
+			n -= 128;
+			sum += 10000000;
+		}
+		else if (n > 64) {
+			n -= 64;
+			sum += 1000000;
+		}
+		else if (n > 32) {
+			n -= 32;
+			sum += 100000;
+		}
+		else if (n > 16) {
+			n -= 16;
+			sum += 10000;
+		}
+		else if (n > 8) {
+			n -= 8;
+			sum += 1000;
+		}
+		else if (n > 4) {
+			n -= 4;
+			sum += 100;
+		}
+		else if (n > 2) {
+			n -= 2;
+			sum += 10;
+		}
+		else {
+			n -= 1;
+			sum += 1;
+		}
 	}
-	minAndIndex(s, n, &minval, &minidx);
-	printf("%d %d", minval, minidx);
 }

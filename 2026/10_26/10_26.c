@@ -160,6 +160,8 @@
 //	printf("%d", secondMax(s, i));
 //}
 
+//优化点 没改 strlen 是 O(n) 的——它要从头数到尾。?每次循环都调一次 → 整个循环变成 O(n?)。但如果字符串长度是 10?，就会慢 10? 倍。改成int len = strlen(s); for (i = 0; i < len; i++)
+//只算一次  或for (i = 0; s[i] != '\0'; i++)
 //int main() {
 //	int i, num=0;
 //	char s[105];
@@ -173,26 +175,118 @@
 //	return 0;
 //}
 
-void avgMax(int* a, int n, double* avg, int* max) {
-	int k;
-	*avg = *a;
-	*max = *a;
-	for (k = 1;k < n;k++) {
-		a++;
-		*avg += *a;
-		if (*a > *max)*max = *a;
+//void avgMax(int* a, int n, double* avg, int* max) {
+//	int k;
+//	*avg = *a;
+//	*max = *a;
+//	for (k = 1;k < n;k++) {
+//		a++;
+//		*avg += *a;
+//		if (*a > *max)*max = *a;
+//	}
+//	*avg /= n;
+//}
+
+//int main() {
+//	int i, j, max=0;
+//	double avg=0;
+//	int s[105];
+//	scanf("%d", &i);
+//	for (j = 0;j < i;j++) {
+//		scanf("%d", &s[j]);
+//	}
+//	avgMax(s, i, &avg, &max);
+//	printf("%.2f %d", avg, max);
+//}
+
+//int main() {
+//	int n, i, j, k, sum=0;
+//	int s[15][15];
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++) {
+//		for (j = 0;j < n;j++) {
+//			scanf("%d", &s[i][j]);
+//		}
+//	}
+//	for (k = 0;k < n;k++) {
+//		sum += s[k][k];
+//	}
+//	printf("%d", sum);
+//}
+
+//int main() {
+//	char a[105];
+//	char b[105] = {0};
+//	int i;
+//	scanf("%s", a);
+//	char* q = a + strlen(a) - 1;
+//	for (i = 0;q >= a;i++, q--) {
+//		b[i] = *q;
+//	}
+//	printf("%s", b);
+//
+//	return 0;
+//}
+
+//int countAboveAvg(int* a, int n) {
+//	int k, cnt=0;
+//	int* q = a;
+//	double sum = 0;
+//	for (k = 0;k < n;k++,a++) {
+//		sum += *a;
+//	}
+//	a = q;
+//	sum /= n;
+//	for (k = 0;k < n;k++, a++) {
+//		if (*a > sum)cnt++;
+//	}
+//	return cnt;
+//}
+
+//int main() {
+//	int s[105] = {0};
+//	int n, i;
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++) {
+//		scanf("%d", &s[i]);
+//	}
+//	printf("%d", countAboveAvg(s, n));
+//}
+
+//int main() {
+//	char s[105];
+//	int i, j = 0;
+//	scanf("%s", s);
+//	char* q = s + strlen(s) - 1;
+//	for (i = 0;&s[i] < q;i++, q--) {
+//		if (s[i] != *q) {
+//			j = 1;
+//			break;
+//		}
+//	}
+//	if (j)printf("NO");
+//	else printf("YES");
+//}
+
+void minAndIndex(int* a, int n, int* minVal, int* minIdx) {
+	*minVal = *a;
+	*minIdx = 0;
+	int j;
+	for (j = 1;j < n;j++) {
+		if (a[j] < *minVal) {
+			*minIdx = j;
+			*minVal = a[j];
+		}
 	}
-	*avg /= n;
 }
 
 int main() {
-	int i, j, max=0;
-	double avg=0;
-	int s[105];
-	scanf("%d", &i);
-	for (j = 0;j < i;j++) {
-		scanf("%d", &s[j]);
+	int s[105] = { 0 };
+	int i, n, minval, minidx;
+	scanf("%d", &n);
+	for (i = 0;i < n;i++) {
+		scanf("%d", &s[i]);
 	}
-	avgMax(s, i, &avg, &max);
-	printf("%.2f %d", avg, max);
+	minAndIndex(s, n, &minval, &minidx);
+	printf("%d %d", minval, minidx);
 }

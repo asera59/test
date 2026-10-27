@@ -62,25 +62,137 @@
 //}
 
 //ai
-void removeChar(char* s, char c) {
-	char* p = s;
-	char* q = s;
-	while (*p != '\0') {
-		if (*p != c) {
-			*q = *p;
-			q++;
-		}
-		p++;
+//void removeChar(char* s, char c) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p != c) {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//int main() {
+//	char s[105] = {0};
+//	char c;
+//	scanf("%s %c", s, &c);
+//	removeChar(s, c);
+//	printf("%s", s);
+//
+//	return 0;
+//}
+
+//void filter(char* s, char c) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p != c) {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//void filter(char* s, char c) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p != c) {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//void filter(char* s, char c) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p != c) {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//应该是*q=*p;反了 改了
+//void keepDigits(char* s) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p >= '0' && *p <= '9') {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//void keepAlpha(char* s) {
+//	char* p = s;
+//	char* q = s;
+//	while (*p != '\0') {
+//		if (*p >= 'A' && *p <= 'z') {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = '\0';
+//}
+
+//int main() {
+//	char s[100];
+//	scanf("%s", s);
+//	keepAlpha(s);
+//	printf("%s", s);
+//}
+
+//int main() {
+//	int s[105] = {0};
+//	int n, i;
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++) {
+//		scanf("%d", &s[i]);
+//	}
+//	int* p = s;
+//	int* q = s;
+//	while (p < s+n) {
+//		p++;
+//		if (*p != *q) {
+//			q++;
+//			*q = *p;
+//		}
+//	}
+//	*q = -1;
+//	for (i = 0;s[i] != -1;i++) {
+//		if (i)printf(" ");
+//		printf("%d", s[i]);
+//	}
+//}
+
+int gcd(int a, int b) {
+	int i;
+	while (b != 0) {
+		i = b;
+		b = a % b;
+		a = i;
 	}
-	*q = '\0';
+	return a;
 }
 
 int main() {
-	char s[105] = {0};
-	char c;
-	scanf("%s %c", s, &c);
-	removeChar(s, c);
-	printf("%s", s);
-
-	return 0;
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d", gcd(a, b));
 }

@@ -244,25 +244,58 @@
 //	printf("%d", sum);
 //}
 
-int removeDigits(char* s) {
-	char* p = s;
-	char* q = s;
-	int num = 0;
-	char* max = s + strlen(s);
-	while (p < max) {
-		if (*p >= '0' && *p <= '9')num++;
-		else {
-			*q = *p;
-			q++;
-		}
-		p++;
-	}
-	*q = 0;
-	return num;
-}
+//int removeDigits(char* s) {
+//	char* p = s;
+//	char* q = s;
+//	int num = 0;
+//	char* max = s + strlen(s);
+//	while (p < max) {
+//		if (*p >= '0' && *p <= '9')num++;
+//		else {
+//			*q = *p;
+//			q++;
+//		}
+//		p++;
+//	}
+//	*q = 0;
+//	return num;
+//}
+
+//int main() {
+//	char s[105] = { 0 };
+//	scanf("%s", s);
+	//不要在同一个表达式里既改又读同一个变量
+	//printf("%s %d", s, removeDigits(s));
+	//改后
+//	int n = removeDigits(s);
+//	printf("%s %d", s, n);
+//}
+
+//int main() {
+//	int m, n, i, j, sum = 0;
+//	int s[15][15];
+//	scanf("%d %d", &m, &n);
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++) scanf("%d", &s[i][j]);
+//	}
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++) sum += s[i][j];
+//		printf("%d\n", sum);
+//		sum = 0;
+//	}
+//}
 
 int main() {
-	char s[105] = { 0 };
-	scanf("%s", s);
-	printf("%s %d", s, removeDigits(s));
+	int n, i, j;
+	int s[20][20];
+	scanf("%d", &n);
+	for (i = 1;i <= n;i++) {
+		for (j = 0;j < i;j++) {
+			if (j == 0 || j == i - 1)s[i][j] = 1;
+			else s[i][j] = s[i - 1][j - 1] + s[i - 1][j];
+			if (j)printf(" ");
+			printf("%d", s[i][j]);
+		}
+		printf("\n");
+	}
 }

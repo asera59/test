@@ -232,3 +232,37 @@
 //		scanf("%d", &c);
 //		printf("'%c'", c);
 //}
+
+//int main() {
+//	char s[105] = { 0 };
+//	scanf("%s", s);
+//	int i, len = strlen(s);
+//	int sum = 0;
+//	for (i = 0;i < len;i++) {
+//		if (s[i] >= '0' && s[i] <= '9')sum = s[i] - '0' + sum;
+//	}
+//	printf("%d", sum);
+//}
+
+int removeDigits(char* s) {
+	char* p = s;
+	char* q = s;
+	int num = 0;
+	char* max = s + strlen(s);
+	while (p < max) {
+		if (*p >= '0' && *p <= '9')num++;
+		else {
+			*q = *p;
+			q++;
+		}
+		p++;
+	}
+	*q = 0;
+	return num;
+}
+
+int main() {
+	char s[105] = { 0 };
+	scanf("%s", s);
+	printf("%s %d", s, removeDigits(s));
+}

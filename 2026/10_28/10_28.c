@@ -27,12 +27,26 @@
 //	return 0;
 //}
 
+//排成降序了 升序应该是s[j+1]<s[k]
 //int main() {
-//	int n, i;
+//	int n, i, j, k;
 //	int s[105];
+//	double sum = 0;
 //	scanf("%d", &n);
 //	for (i = 0;i < n;i++)scanf("%d", &s[i]);
-//	if (n % 2 == 0)printf("%.1f", (1.0 * s[n / 2 - 1] + s[n / 2]) / 2);
+//	for (i = 0;i < n;i++) {
+//		for (j = 0;j < n - i - 1;j++) {
+//			if (s[j+1] > s[j]) {
+//				k = s[j];
+//				s[j] = s[j + 1];
+//				s[j + 1] = k;
+//			}
+//		}
+// }
+//	if (n % 2 == 0) {
+//		sum = (1.0 * s[n / 2 - 1] + s[n / 2]) / 2;
+//			printf("%.1f", sum);
+//	}
 //	else printf("%d", s[n / 2]);
 //}
 
@@ -64,22 +78,95 @@
 //	printf("%d %d %d %d %d", a, b, c, d, e);
 //}
 
+//int main() {
+//	int m, n, i, j;
+//	int s[15][15];
+//	scanf("%d %d", &m, &n);
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++)scanf("%d", &s[i][j]);
+//	}
+//	int max = s[0][0], mnum = 0, nnum = 0;
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++) {
+//			if (s[i][j] > max) {
+//				max = s[i][j];
+//				mnum = i;
+//				nnum = j;
+//			}
+//		}
+//	}
+//	printf("%d %d %d", max, mnum, nnum);
+//}
+
+//int main() {
+//	int n, i, j, k;
+//	int s[105];
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++)scanf("%d", &s[i]);
+//	for (i = 0;i < n;i++) {
+//		for (j = 0;j < n - i - 1;j++) {
+//			if (s[j] > s[j + 1]) {
+//				k = s[j];
+//				s[j] = s[j + 1];
+//				s[j + 1] = k;
+//			}
+//		}
+//	}
+//	for (i = 0;i < n;i++) {
+//		if (i)printf(" ");
+//		printf("%d", s[i]);
+//	}
+//}
+
+//int main() {
+//	int m, n, max, am, an, i, j;
+//	int s[15][15];
+//	scanf("%d %d", &m, &n);
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++) scanf("%d", &s[i][j]);
+//	}
+//	max = s[0][0], am = 0, an = 0;
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++) {
+//			if (s[i][j] > max) {
+//				max = s[i][j];
+//				am = i;
+//				an = j;
+//			}
+//		}
+//	}
+//	printf("%d %d %d", max, am, an);
+//}
+
+//有关写入的值注意要放在其后面 已改 strlen位置本来在int
+//int main() {
+//	char s[105] = { 0 };
+//	int a = 0, b = 0, c = 0, d = 0, i;
+//	scanf("%s", s);
+// int len = strlen(s);
+//	for (i = 0;i < len;i++) {
+//		if (s[i] >= 'A' && s[i] <= 'Z')a++;
+//		else if (s[i] >= 'a' && s[i] <= 'z')b++;
+//		else if (s[i] >= '0' && s[i] <= '9')c++;
+//		else d++;
+//	}
+//	printf("%d %d %d %d", a, b, c, d);
+//}
+
 int main() {
-	int m, n, i, j;
-	int s[15][15];
-	scanf("%d %d", &m, &n);
-	for (i = 0;i < m;i++) {
-		for (j = 0;j < n;j++)scanf("%d", &s[i][j]);
-	}
-	int max = s[0][0], mnum = 0, nnum = 0;
-	for (i = 0;i < m;i++) {
-		for (j = 0;j < n;j++) {
-			if (s[i][j] > max) {
-				max = s[i][j];
-				mnum = i;
-				nnum = j;
-			}
+	char s[105];
+	char i;
+	char* p = s;
+	char* q = s;
+	scanf("%s %c", &s, &i);
+	char* max = s + strlen(s);
+	while (p < max) {
+		if (*p != i) {
+			*q = *p;
+			q++;
 		}
+		p++;
 	}
-	printf("%d %d %d", max, mnum, nnum);
+	*q = 0;
+	printf("%s", s);
 }

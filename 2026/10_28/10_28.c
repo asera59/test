@@ -153,6 +153,7 @@
 //	printf("%d %d %d %d", a, b, c, d);
 //}
 
+//错同上 以及单个字符用%c
 int main() {
 	char s[105];
 	char i;

@@ -285,17 +285,70 @@
 //	}
 //}
 
+//int main() {
+//	int n, i, j;
+//	int s[20][20];
+//	scanf("%d", &n);
+//	for (i = 1;i <= n;i++) {
+//		for (j = 0;j < i;j++) {
+//			if (j == 0 || j == i - 1)s[i][j] = 1;
+//			else s[i][j] = s[i - 1][j - 1] + s[i - 1][j];
+//			if (j)printf(" ");
+//			printf("%d", s[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//效率低 还用goto 标准见下
+//int main() {
+//	int n, i, j, k;
+//	int s[105];
+//	scanf("%d", &n);
+//	for (i = 0;i < n;i++)scanf("%d", &s[i]);
+//	cycle:
+//	for (i = 1,k=0;i < n;i++,k++) {
+//		if (s[k] > s[i]) {
+//			j = s[i];
+//			s[i] = s[k];
+//			s[k] = j;
+//		}
+//	}
+//	for (i = 1, k = 0;i < n;i++, k++) {
+//		if (s[k] > s[i]) {
+//			goto cycle;
+//		}
+//	}
+//	for (i = 0;i < n;i++) {
+//		if (i)printf(" ");
+//		printf("%d", s[i]);
+//	}
+//}
+
+//标准
 int main() {
-	int n, i, j;
-	int s[20][20];
+	int n, i, j, t, a[105];
 	scanf("%d", &n);
-	for (i = 1;i <= n;i++) {
-		for (j = 0;j < i;j++) {
-			if (j == 0 || j == i - 1)s[i][j] = 1;
-			else s[i][j] = s[i - 1][j - 1] + s[i - 1][j];
-			if (j)printf(" ");
-			printf("%d", s[i][j]);
+	for (i = 0;i < n;i++)scanf("%d", &a[i]);
+	for (i = 0;i < n;i++) {
+		for (j = 0;j < n - 1 - i;j++) {
+			if (a[j] > a[j + 1]) {
+				t = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = t;
+			}
 		}
-		printf("\n");
 	}
+	for (i = 0;i < n;i++) {
+		if (i)printf(" ");
+		printf("%d", a[i]);
+	}
+	printf("\n");
 }
+
+//switch case忘了 直接抄
+//int main() {
+//	int s;
+//	scanf("%d", &s);
+//	
+//}

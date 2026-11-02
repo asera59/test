@@ -91,6 +91,7 @@
 //	printf("%d", countEven(s,n));
 //}
 
+//看图说话，暴力解法。
 //int main() {
 //	char s[15];
 //	int a[15];
@@ -104,17 +105,37 @@
 //	}
 //}
 
+//字符串转整数，标准做法是一行累加 见下
+//int main() {
+//	char s[105];
+//	int i, n = 0;
+//	scanf("%s", s);
+//	for (i = 0;s[i] != '\0';i++) {
+//		n = n * 10 + (s[i] - '0');
+//	}
+//	printf("%d\n", n);
+//}
+
+
+//int main() {
+//	int s[15][15];
+//	int m, n, i, j, sum = 0;
+//	scanf("%d %d", &m, &n);
+//	for (i = 0;i < m;i++) {
+//		for (j = 0;j < n;j++)scanf("%d", &s[i][j]);
+//	}
+//	for (j = 0;j < n;j++) {
+//		for (i = 0;i < m;i++)sum += s[i][j];
+//		if (j)printf(" ");
+//		printf("%d", sum);
+//		sum = 0;
+//	}
+//}
+
 int main() {
-	int s[15][15];
-	int m, n, i, j, sum = 0;
-	scanf("%d %d", &m, &n);
-	for (i = 0;i < m;i++) {
-		for (j = 0;j < n;j++)scanf("%d", &s[i][j]);
-	}
-	for (j = 0;j < n;j++) {
-		for (i = 0;i < m;i++)sum += s[i][j];
-		if (j)printf(" ");
-		printf("%d", sum);
-		sum = 0;
+	char s[105];
+	int i, cut = 0;
+	for (i = 0;s[i] != '\0';i++) {
+
 	}
 }
